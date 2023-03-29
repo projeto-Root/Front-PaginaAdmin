@@ -1,0 +1,17 @@
+.barra_lateral li {
+    list-style-type: none;
+}
+
+.barra_lateral {
+    width: 68px;
+    min-height: 90.6vh;
+    background-color: #4489EC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone__item {
+    height: 40px;
+    margin-top: 20px;
+}

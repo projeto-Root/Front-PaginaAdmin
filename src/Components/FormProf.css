@@ -1,0 +1,90 @@
+
+.card_adicionar_professor{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: lighter;
+    color:#777;
+    width: 75vw;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.37);
+    
+    justify-content: space-evenly;
+}
+.imagem_box{
+    display: flex;
+    align-items: baseline   ;
+}
+.titulo_card_adicionar_prof{
+    margin-left: 15px;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.imagem_usuario{
+    width: 200px;
+    margin-left: 30px;
+}
+
+#button_imagem_professor{
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    padding: 2px;
+    background-color: #4489EC;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    height: 40px;
+} 
+
+
+
+@media(max-width:425px){
+    .imagem_box{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(max-width:513px){
+    .imagem_box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .titulo_card_adicionar_prof {
+        text-align: center;
+    }
+}
+.inputs_container_profs{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.dados_do_professor{
+    width: 70vw;
+    height: 40px;
+    border: 2px solid #E8E8E8;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 5px;
+    font-size: large;
+}
+.button_enviar_dados{
+    margin-top:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 25px;
+    background-color: #4489EC;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}

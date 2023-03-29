@@ -1,0 +1,290 @@
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(240, 244, 244, 0.518);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-login {
+    max-width: 50vw;
+    max-height: 60vh;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 70vw;
+    height: 60vh;
+    border-radius: 5px;
+    box-shadow: 15px 15px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+}
+
+.right-login {
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-login > p {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.left-login {
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login > h1 {
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.input-field > input {
+    width: 23vw;
+    height: 5vh;
+    border: none;
+    font-size: larger;
+    padding: 5px;
+    text-align: left;
+    outline: none;
+    color: rgba(0,0,0,0.7);
+    margin: 0;
+}
+
+.input-field :first-child {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#button-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+    background-color: #1e7bde;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#button-login:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #1e7bde , #241178);
+}
+
+.input-field .underline::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 34%;
+    margin-top: -30px;
+    background: rgba(0,0,0,0.2)
+}
+
+
+.input-field .underline::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 34%;
+    margin-top: -30px;
+    background: linear-gradient(45deg , rgba(0,0,0,0.2) , black);
+    transform:scaleX(0);
+    transition: all .3s ease-in-out;
+}
+
+.input-field input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+
+.img-login {
+    width: 50%;
+    border-radius: 100%;
+    border: #000000;
+    border-style: solid;
+}
+
+.errologin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 141, 141);
+    height: 40px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#linha-vertical {
+    height: 90%;
+    border-right: 1px solid black;
+}
+
+@media (max-width:1050px){
+    .textoLogin{
+        font-size: x-large;
+    }
+    .container-login{
+        width: 95vw;
+    }
+    #button-login{
+        width: 100px;
+        height: 40px;
+        font-size: small;
+    }
+    .img-login{
+        width: 40%;
+    }
+    .input-field{
+        font-size: smaller;
+    }
+    .input-field > input#login {
+        width: 90%;
+    }
+    .input-field > input#password {
+        width: 90%;
+    }
+}
+
+@media (max-width:620px){
+    .textoLogin{
+        font-size: large;
+    }
+    .input-field > input#login {
+        width: 90%;
+    }
+    .input-field > input#password {
+        width: 90%;
+    }
+}
+
+@media (max-width:560px){
+    .container-login{
+        flex-direction: column-reverse;
+        height: 80vh;
+    }
+    .right-login>p {
+        font-size: large;
+        margin-top: 1px;
+    }
+    .input-field{
+        font-size: smaller;
+    }
+    .underline{
+        text-align: left;
+    }
+    .textoLogin{
+        font-size: medium;
+        text-align: center;
+        display: none;
+    }
+    #linha-vertical{
+        display: none;
+    }
+    #button-login{
+        margin-bottom: 10px;
+    }
+    .img-login{
+        width: 55%;
+    }
+    #login{
+        text-align: left;
+        width: 100%;
+    }
+    #password{
+        text-align: left;
+        width: 100%;
+    }
+    .input-field .underline::before {
+        width: 40%;
+    }
+    .input-field .underline::after {
+        width: 40%;
+    }
+    .input-field > input#login {
+        width: 90%;
+    }
+    .input-field > input#password {
+        width: 90%;
+    }
+}
+
+@media (max-width:440px){
+    
+    .input-field .underline::before {
+        width: 50%;
+    }
+    .input-field .underline::after {
+        width: 50%;
+    }
+    .textoLogin{
+        font-size: larger;
+        text-align: center;
+    }
+    .right-login>p {
+        font-size: large;
+        margin-top: 1px;
+    }
+    .input-field > input#login {
+        width: 90%;
+    }
+    .input-field > input#password {
+        width: 90%;
+    }
+
+}
+
+@media (max-width:550px){
+    .input-field .underline::before {
+        width: 50%;
+    }
+    .input-field .underline::after {
+        width: 50%;
+    }
+    .input-field > input#login {
+        width: 90%;
+    }
+    .input-field > input#password {
+        width: 90%;
+    }
+}
+@media (max-width:280px) {
+    .input-field .underline::before {
+        width: 50%;
+    }
+    .input-field .underline::after {
+        width: 50%;
+    }
+    .input-field > input#login {
+        width: 90%;
+        font-size: small;
+    }
+    .input-field > input#password {
+        width: 90%;
+        font-size: small;
+    }
+    
+}

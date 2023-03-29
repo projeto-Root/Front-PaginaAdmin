@@ -1,0 +1,15 @@
+.containerpainel {
+    background-color: #e8e8e8;
+}
+
+.sidebarcontent {
+    display: flex;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
