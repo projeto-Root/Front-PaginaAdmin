@@ -19,7 +19,7 @@ const logOutFunc = () => {
     <div>
       <div className="cabecalho_container">
                 <div className="cabecalho_itens">
-                    <img src="https://img.freepik.com/premium-vector/electronic-tree-concept_268276-306.jpg?size=338&ext=jpg" title='Root' className="logo_root_cabecalho" alt="logo root"/>
+                    <Link to='/menu'> <img src="https://img.freepik.com/premium-vector/electronic-tree-concept_268276-306.jpg?size=338&ext=jpg" title='Root' className="logo_root_cabecalho" alt="logo root"/> </Link>
                     <p> <u> {user} </u>  </p>
                 </div>
                 <ul className="cabecalho_itens_li">
