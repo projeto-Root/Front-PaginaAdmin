@@ -7,11 +7,14 @@ import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
-  const {setLogin, user} = useContext(AuthContext)
+  const {setPerson ,setLogin, user} = useContext(AuthContext)
   const navigate = useNavigate()
 
 const logOutFunc = () => {
   setLogin(false)
+  setPerson("")
+  localStorage.removeItem("token")
+  localStorage.removeItem("username")
   navigate('/')
 }
 

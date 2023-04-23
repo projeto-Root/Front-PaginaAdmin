@@ -1,9 +1,10 @@
 import React from 'react'
 import './FormLogin.css'
 import { useState } from 'react'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AuthContext from '../Context/AuthContext'
+import api from '../Services/api'
 
 
 const FormLogin = () => {
@@ -13,28 +14,55 @@ const FormLogin = () => {
   const [password, setPassword] = useState('')
   const {setLogin, setPerson} = useContext(AuthContext)
   const [loginerror, setLoginError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [inputType, setInputType] = useState("password")
 
 
-const submitForm = (e) => {
+
+const submitForm = async (e) => {
   e.preventDefault()
-
- // Requisição para a api
-
-
-  if (username == 'admin' && password == 'password') { // Aqui vai estar o resultado da requisição se for bem sucedida executa a primeira parte do código
-    setLogin(true)
+  setLoginError(false)
+ try {
+    const response = await api.post('/auth', {
+      email: username,
+      password: password
+    });
+    const data = response.data;
+    console.log(data)
     setPerson(username)
+    setLogin(true)
+    localStorage.setItem('token', data.token)
+    localStorage.setItem('username', username)
     navigate('/menu')
-  } else {
-    setLoginError(false)
-    setTimeout(() => {
-      setLoginError(true)
-    },300)
-    setPassword('')
-    document.getElementById('password').value = ""
-  }
-}
+  } catch (error) {
+    console.log(error);
+    setLoginError(true)
+  } 
+}; 
 
+const autoLogin = async () => {
+
+  if (localStorage.getItem('token') == null) {
+return
+  }
+
+  const config = {
+    headers: {
+      'Authorization': `bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    }
+  };
+  try {
+    const response = await api.get('/User', config);
+    const data = response.data;
+    setPerson(localStorage.getItem('username'))
+    setLogin(true)
+    navigate('/menu')
+  } catch (error) {
+    console.log(error);
+  } 
+}
+  
 const handleChangeUsername = event => {
   setUsername(event.target.value)
 }
@@ -42,6 +70,12 @@ const handleChangeUsername = event => {
 const handleChangePassword = event => {
   setPassword(event.target.value)
 }
+
+useEffect(() => {
+  autoLogin()
+}, [])
+
+
   return (
     <div>
        <div className="main-login">
@@ -57,11 +91,11 @@ const handleChangePassword = event => {
                         </div>
 
                         <div className="input-field">
-                        <input onChange={handleChangePassword} type="password" name="password" id="password" placeholder="Password"/>
+                        <input onChange={handleChangePassword} type={inputType} name="password" id="password" placeholder="Password"/>
                         <div className="underline"></div>
                         {loginerror && <div className='errologin'> Login ou senha incorretos. </div>}
                         </div>
-                        <input type="submit" value="Continuar"id="button-login"/>
+                        <input disabled={loading ? true : false} type="submit" value={loading ? 'Carregando...' : 'Continuar'} id="button-login"/>
                        </form>
                     </div>
                 </div>

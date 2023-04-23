@@ -143,6 +143,19 @@
     border-right: 1px solid black;
 }
 
+.eyepassword {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    position: relative;
+}
+
+.eyepassword img {
+    width: 30px;
+    height: 30px;
+}
+
 @media (max-width:1050px){
     .textoLogin{
         font-size: x-large;

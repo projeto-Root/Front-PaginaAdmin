@@ -3,6 +3,8 @@ import './FormProf.css'
 
 const FormProf = () => {
 
+    // Verificar se o token do usuário permite acesso à essa página.
+
   return (
         <div className="card_container">
             <div className="card_adicionar_professor">
