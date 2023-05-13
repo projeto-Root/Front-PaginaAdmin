@@ -63,7 +63,6 @@
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
 }
 .dados_do_professor{
@@ -87,4 +86,10 @@
     border: none;
     border-radius: 5px;
     color: white;
+}
+
+.buttonsubmit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

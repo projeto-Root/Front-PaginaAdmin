@@ -14,7 +14,7 @@ const SideMenu = () => {
         </li>
 
         <li>
-          <Link>
+          <Link to='/menu/formrepresent'>
             <img src="../../imgs/de-volta-no-tempo.png" className="icone__item" alt="icone-adicionar" />
           </Link>
         </li>

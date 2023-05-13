@@ -7,6 +7,7 @@ import LoginPage from './Pages/LoginPage'
 import Painel from './Pages/Painel'
 import FormProf from './Components/FormProf'
 import { AuthProvider } from './Context/AuthProvider'
+import FormRepresentation from './Components/FormRepresentation'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
        </Route>
       <Route element={<Painel></Painel>}>
             <Route element={<FormProf></FormProf>} path='/menu/formprof'></Route>
+            <Route element={<FormRepresentation></FormRepresentation>} path='/menu/formrepresent'></Route>
       </Route>
    </Routes>
    </BrowserRouter>
